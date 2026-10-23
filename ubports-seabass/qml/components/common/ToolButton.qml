@@ -9,9 +9,15 @@ ToolButton {
   id: root
   focusPolicy: Qt.NoFocus
   property string iconName
+  hoverEnabled: true
+  display: AbstractButton.IconOnly
 
   CustomComponents.Icon {
     anchors.centerIn: parent
     name: root.iconName
   }
+
+  ToolTip.delay: 1000
+  ToolTip.visible: root.text && hovered
+  ToolTip.text: root.text
 }
